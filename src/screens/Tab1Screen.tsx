@@ -10,12 +10,12 @@ const Tab1Screen = () => {
     <View style={styles.globalMargin}>
       <Text style={styles.title}>Iconos</Text>
       <Text>
-        <TouchableIcon iconName='american-football-outline' />
-        <TouchableIcon iconName='barbell-outline' />
-        <TouchableIcon iconName='battery-charging-outline' />
-        <TouchableIcon iconName='bug-outline' />
-        <TouchableIcon iconName='cloudy-outline' />
-        <TouchableIcon iconName='eye-outline' />
+        <TouchableIcon iconName="american-football-outline" />
+        <TouchableIcon iconName="barbell-outline" />
+        <TouchableIcon iconName="battery-charging-outline" />
+        <TouchableIcon iconName="bug-outline" />
+        <TouchableIcon iconName="cloudy-outline" />
+        <TouchableIcon iconName="eye-outline" />
       </Text>
     </View>
   );
