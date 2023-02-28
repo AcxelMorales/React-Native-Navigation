@@ -29,11 +29,11 @@ const Pagina1Screen = ({navigation}: Props) => {
           onPress={() =>
             navigation.navigate('Persona', {
               id: 1,
-              name: 'Pedro',
+              name: 'Acxel',
             })
           }>
           <Icon name="man-outline" size={30} color="#FFF" />
-          <Text style={styles.botonGrandeTexto}>Pedro</Text>
+          <Text style={styles.botonGrandeTexto}>Acxel</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={{
