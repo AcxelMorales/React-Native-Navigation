@@ -13,10 +13,12 @@ import {
   Text,
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/Ionicons';
+
 import SettingsScreen from '../screens/SettingsScreen';
 import {BottomTabsNavigator} from './BottomTabsNavigator';
 
-import {styles} from '../theme/appTheme';
+import {styles, colors} from '../theme/appTheme';
 
 const Drawer = createDrawerNavigator();
 
@@ -29,8 +31,7 @@ export const MenuDrawerNavigator = () => {
         drawerType: width >= 768 ? 'permanent' : 'front',
         // headerShown: false,
       }}
-      drawerContent={props => <Menu {...props} />}
-    >
+      drawerContent={props => <Menu {...props} />}>
       <Drawer.Screen name="Tabs" component={BottomTabsNavigator} />
       <Drawer.Screen
         name="Settings"
@@ -57,13 +58,19 @@ const Menu = ({navigation}: DrawerContentComponentProps) => {
         <TouchableOpacity
           style={styles.menuBoton}
           onPress={() => navigation.navigate('Tabs')}>
-          <Text style={styles.textMenu}>Tabs</Text>
+          <View style={styles.opcionesContainer}>
+            <Icon name="settings-outline" size={20} color={colors.primary} />
+            <Text style={styles.textMenu}>Tabs</Text>
+          </View>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.menuBoton}
           onPress={() => navigation.navigate('Settings')}>
-          <Text style={styles.textMenu}>Ajustes</Text>
+          <View style={styles.opcionesContainer}>
+            <Icon name="hammer-outline" size={20} color={colors.primary} />
+            <Text style={styles.textMenu}>Ajustes</Text>
+          </View>
         </TouchableOpacity>
       </View>
     </DrawerContentScrollView>

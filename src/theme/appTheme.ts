@@ -24,6 +24,7 @@ export const styles = StyleSheet.create({
   botonGrandeTexto: {
     color: 'white',
     fontSize: 17,
+    marginTop: 5
   },
   avatar: {
     width: 150,
@@ -38,8 +39,12 @@ export const styles = StyleSheet.create({
     marginVertical: 30,
     marginHorizontal: 50,
   },
+  opcionesContainer: {
+    flexDirection: 'row',
+  },
   textMenu: {
     fontSize: 20,
+    marginLeft: 15
   },
   menuBoton: {
     marginVertical: 10,
