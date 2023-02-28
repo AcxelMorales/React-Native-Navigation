@@ -16,6 +16,7 @@ export interface AuthContextProps {
   authState: AuthState;
   signIn: () => void;
   setFavIcon: (payload: string) => void;
+  logout: () => void;
 }
 
 export const AuthContext = createContext({} as AuthContextProps);
@@ -36,12 +37,19 @@ export const AuthProvider = ({children}: {children: JSX.Element}) => {
     });
   };
 
+  const logout = () => {
+    dispatch({
+      type: 'logout',
+    });
+  };
+
   return (
     <AuthContext.Provider
       value={{
         authState,
         signIn,
         setFavIcon,
+        logout,
       }}>
       {children}
     </AuthContext.Provider>
