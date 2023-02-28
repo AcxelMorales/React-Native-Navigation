@@ -2,8 +2,11 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Text} from 'react-native';
 
+import Icon from 'react-native-vector-icons/Ionicons';
+
 import Tab1Screen from '../screens/Tab1Screen';
-import Tab2Screen from '../screens/Tab2Screen';
+// import Tab2Screen from '../screens/Tab2Screen';
+import { TopTabNavigator } from './TopTabNavigator';
 import {StackNavigator} from './StackNavigator';
 
 import {colors} from '../theme/appTheme';
@@ -28,37 +31,40 @@ export const BottomTabsNavigator = () => {
           let iconName: string = '';
 
           switch (name) {
-            case 'Tab1':
-              iconName = 'T1';
+            case 'Dev':
+              iconName = 'code-outline';
               break;
-            case 'Tab2':
-              iconName = 'T2';
+            case 'Bugs':
+              iconName = 'bug-outline';
               break;
-            case 'StackNavigator':
-              iconName = 'ST';
+            case 'Work':
+              iconName = 'git-network-outline';
               break;
           }
 
-          return <Text style={{color}}>{iconName}</Text>;
+          return (
+            <Text style={{color}}>
+              <Icon
+                name={iconName}
+                size={20}
+                color={colors.primary}
+              />
+            </Text>
+          );
         },
       })}
       sceneContainerStyle={{
         backgroundColor: 'white',
-      }}
-    >
+      }}>
+      <Tab.Screen name="Dev" options={{title: 'Dev'}} component={Tab1Screen} />
       <Tab.Screen
-        name="Tab1"
-        options={{title: 'Tab1'}}
-        component={Tab1Screen}
+        name="Bugs"
+        options={{title: 'Bugs'}}
+        component={TopTabNavigator}
       />
       <Tab.Screen
-        name="Tab2"
-        options={{title: 'Tab2'}}
-        component={Tab2Screen}
-      />
-      <Tab.Screen
-        name="StackNavigator"
-        options={{title: 'Stack'}}
+        name="Work"
+        options={{title: 'Work'}}
         component={StackNavigator}
       />
     </Tab.Navigator>

@@ -1,9 +1,11 @@
 import {StackScreenProps} from '@react-navigation/stack';
 import {View, Text, Button, TouchableOpacity} from 'react-native';
 
+import Icon from 'react-native-vector-icons/Ionicons';
+
 import {styles} from '../theme/appTheme';
 
-interface Props extends StackScreenProps<any, any> {}
+interface Props extends StackScreenProps<any, any> {};
 
 const Pagina1Screen = ({navigation}: Props) => {
   return (
@@ -30,6 +32,7 @@ const Pagina1Screen = ({navigation}: Props) => {
               name: 'Pedro',
             })
           }>
+          <Icon name="man-outline" size={30} color="#FFF" />
           <Text style={styles.botonGrandeTexto}>Pedro</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -43,6 +46,7 @@ const Pagina1Screen = ({navigation}: Props) => {
               name: 'Maria',
             })
           }>
+          <Icon name="woman-outline" size={30} color="#FFF" />
           <Text style={styles.botonGrandeTexto}>Maria</Text>
         </TouchableOpacity>
       </View>
